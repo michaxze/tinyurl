@@ -1,0 +1,7 @@
+
+<h1>URL Details</h1>
+
+<p><strong>TinyURL: </strong> <%= @link.short_url %> </p>
+<p><%= link_to @link.original_url, @link.short_url, target: '_blank' %></p>
+
+<p><strong>Number of views:</strong> <%= @link.visits.count %> </p>

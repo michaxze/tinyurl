@@ -1,0 +1,19 @@
+
+<p>Generate short url</p>
+
+
+<% if defined?(@link) and @link.errors.present? %>
+  Errors:
+  <ul>
+    <% @link.errors.full_messages.each do |e| %>
+      <%= e %>
+    <% end %>
+  </ul>
+
+<% end %>
+<%= form_tag  '/generate' do  %>
+
+<%= text_field_tag :url, nil, placeholder: 'Enter url', autocomplete: "off" %>
+<%= submit_tag "Generate URL" %>
+<% end %>
+
