@@ -19,6 +19,7 @@ class HomeController < ApplicationController
 
   def show
     @link = Link.find_by(code: params[:token])
+
     if @link.present?
       LinkService.new.viewed(@link.id, request.remote_ip)
       redirect_to @link.original_url
